@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <CalendarView
+            android:id="@+id/calendar"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+    </CalendarView>
+
+    <TextView
+            android:id="@+id/tvPickDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"/>
+</LinearLayout>

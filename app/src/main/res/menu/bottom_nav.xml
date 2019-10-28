@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:title=""
+            android:icon="@drawable/ic_accounts"
+            android:id="@+id/item_accounts"
+            />
+
+    <item
+            android:title=""
+            android:icon="@drawable/ic_transactions"
+            android:id="@+id/item_transactions"
+            />
+
+    <item
+            android:title=""
+            android:icon="@drawable/ic_categories"
+            android:id="@+id/item_categories">
+    </item>
+
+    <item
+            android:title=""
+            android:icon="@drawable/ic_overview"
+            android:id="@+id/item_overview">
+    </item>
+
+    <item
+            android:title=""
+            android:icon="@drawable/ic_balance"
+            android:id="@+id/item_balance">
+    </item>
+
+</menu>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/colorBlackTrans"
+        >
+    <TextView
+            android:id="@+id/tvDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:text="25"
+            android:textSize="60sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="25dp"/>
+
+    <TextView
+            android:id="@+id/tvMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:text="Siječanj"
+            android:textSize="25sp"
+            app:layout_constraintTop_toTopOf="@id/tvDay"
+            app:layout_constraintBottom_toTopOf="@id/tvYear"
+            app:layout_constraintStart_toEndOf="@id/tvDay"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"/>
+
+    <TextView
+            android:id="@+id/tvYear"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textColor="@color/colorWhite"
+            android:text="2019"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay"
+            app:layout_constraintStart_toEndOf="@id/tvDay"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

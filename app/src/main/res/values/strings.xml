@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyMoney</string>
+    <string name="kn"> kn</string>
+    <string name="ok">OK</string>
+    <string name="accounts_">Računi:</string>
+    <string name="iz_racuna">Iz računa:</string>
+    <string name="biljeska">Bilješka…</string>
+    <string name="save">SPREMI</string>
+    <string name="textFromAccount">Iz računa:</string>
+    <string name="textForCategory">Za kategoriju:</string>
+    <string name="textFromCategory">Iz kategorije:</string>
+    <string name="textForAccount">Za račun:</string>
+    <string name="cijelo_vrijeme">Cijelo vrijeme</string>
+    <string name="odaberite_dan">Danas</string>
+    <string name="mjesec">Trenutni mjesec</string>
+    <string name="godina">Trenutna godina</string>
+    <string name="troskovi">TROŠKOVI</string>
+    <string name="primanja">PRIMANJA</string>
+    <string name="noTransactionsText">Nema transakcija \n za odabrano vrijeme!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
