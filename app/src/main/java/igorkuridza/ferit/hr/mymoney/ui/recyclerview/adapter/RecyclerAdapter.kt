@@ -42,6 +42,8 @@ class RecyclerAdapter(): RecyclerView.Adapter<BaseViewHolder<*>>() {
         notifyDataSetChanged()
     }
 
+    fun getData(): List<Any> = data
+
     fun clearData(){
         data.clear()
         notifyDataSetChanged()

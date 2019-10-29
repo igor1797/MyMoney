@@ -7,6 +7,4 @@ interface TransactionsFragmentView{
     fun setupUi()
 
     fun onGetTransactionAdapterData(newData: List<Any>)
-
-    fun onGetTransactionsByNote(transactions: List<Any>)
 }

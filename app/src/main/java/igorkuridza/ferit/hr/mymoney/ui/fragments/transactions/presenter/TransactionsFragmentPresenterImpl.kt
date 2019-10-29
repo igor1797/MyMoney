@@ -4,6 +4,7 @@ import igorkuridza.ferit.hr.mymoney.common.*
 import igorkuridza.ferit.hr.mymoney.model.Transaction
 import igorkuridza.ferit.hr.mymoney.persistance.transaction_repository.TransactionRepository
 import igorkuridza.ferit.hr.mymoney.ui.fragments.transactions.view.TransactionsFragmentView
+import java.util.*
 
 class TransactionsFragmentPresenterImpl(
     private val view: TransactionsFragmentView,
@@ -47,35 +48,33 @@ class TransactionsFragmentPresenterImpl(
         return newData
     }
 
-    override fun getTransactionAdapterData(type: String) {
-        when(type){
-            TYPE_ALL_TIME -> {
-                val transactions = getAllTransactions()
-                val newDataForAdapter = getNewDataForAdapter(transactions)
-                view.onGetTransactionAdapterData(newDataForAdapter)
-            }
-            TYPE_TODAY ->{
-                val transactions = getTransactionsFromToday()
-                val newDataForAdapter = getNewDataForAdapter(transactions)
-                view.onGetTransactionAdapterData(newDataForAdapter)
-            }
+    private fun getTransactionsByDateType(dateType: String): List<Transaction>{
+        when(dateType){
+            TYPE_ALL_TIME -> return getAllTransactions()
+            TYPE_TODAY -> return getTransactionsFromToday()
             TYPE_CURRENT_MONTH ->{
                 val currentMonth = getCurrentMonth()
-                val transactions = getTransactionsByMonthYear(currentMonth)
-                val newDataForAdapter = getNewDataForAdapter(transactions)
-                view.onGetTransactionAdapterData(newDataForAdapter)
+                return getTransactionsByMonthYear(currentMonth)
             }
             TYPE_CURRENT_YEAR ->{
                 val currentYear = getCurrentYear().toInt()
-                val transactions = getTransactionsByYear(currentYear)
-                val newDataForAdapter = getNewDataForAdapter(transactions)
-                view.onGetTransactionAdapterData(newDataForAdapter)
+                return getTransactionsByYear(currentYear)
             }
         }
+        return emptyList()
     }
 
-    override fun getTransactionByNote(note: String) {
-        val transactions = transactionsRepository.getAllTransactionsByNote(note)
-        view.onGetTransactionsByNote(getNewDataForAdapter(transactions))
+    override fun getTransactionAdapterData(dateType: String) {
+        val transactions = getTransactionsByDateType(dateType)
+        val newDataForAdapter = getNewDataForAdapter(transactions)
+        view.onGetTransactionAdapterData(newDataForAdapter)
+    }
+
+    override fun filterDataByNote(dateType: String, searchText: String?) {
+        val transactions = getTransactionsByDateType(dateType).filter {
+            it.note.toLowerCase(Locale.ROOT).contains(searchText!!.toLowerCase(Locale.ROOT))
+        }
+        val newDataForAdapter = getNewDataForAdapter(transactions)
+        view.onGetTransactionAdapterData(newDataForAdapter)
     }
 }

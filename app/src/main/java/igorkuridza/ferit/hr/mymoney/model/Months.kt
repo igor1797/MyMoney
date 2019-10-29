@@ -5,9 +5,9 @@ import igorkuridza.ferit.hr.mymoney.common.getCurrentYear
 object Months {
     fun getAll(): List<String>{
         val currentYear = getCurrentYear()
-        return arrayListOf("January $currentYear","February $currentYear","March $currentYear",
-            "April $currentYear","May $currentYear","June $currentYear",
-            "July $currentYear", "August $currentYear", "September $currentYear",
-            "October $currentYear","November $currentYear", "December $currentYear")
+        return arrayListOf("siječnja $currentYear","veljače $currentYear","ožujka $currentYear",
+            "travnja $currentYear","svibnja $currentYear","lipnja $currentYear",
+            "srpnja $currentYear", "kolovoza $currentYear", "rujna $currentYear",
+            "listopada $currentYear","studenoga $currentYear", "prosinca $currentYear")
     }
 }

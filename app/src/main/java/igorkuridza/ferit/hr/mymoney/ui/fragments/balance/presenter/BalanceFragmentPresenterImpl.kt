@@ -33,9 +33,9 @@ class BalanceFragmentPresenterImpl (
 
     override fun getDataForAdapter(){
         val data = ArrayList<Any>()
-        val passedMonths = getPassedMonthsForCurrentYear()
+        val months = Months.getAll()
 
-        passedMonths.forEach {monthYear->
+        months.forEach {monthYear->
             val month = getMonthFromMonthYear(monthYear)
             val year = getYearFromMonthYear(monthYear)
             val incomesTotalAmount = getTotalAmountForTypeOfCategory(TypeOfCategory.INCOMES, monthYear)
@@ -52,18 +52,6 @@ class BalanceFragmentPresenterImpl (
 
     private fun getAllTransactionsByMonthYearCategoryId(id: Long, monthYear: String): List<Transaction>{
         return transactionsRepository.getTransactionsByMonthYearCategoryId(id,monthYear)
-    }
-
-    private fun getPassedMonthsForCurrentYear(): List<String>{
-        val months = arrayListOf<String>()
-        val currentMonth = getCurrentMonth()
-        while ((currentMonth != iterator.currentItem()))
-        {
-            months.add(iterator.currentItem() as String)
-            iterator.next()
-        }
-        months.add(iterator.currentItem() as String)
-        return months
     }
 
     private fun getTotalAmountForTypeOfCategory(typeOfCategory: TypeOfCategory, monthYear: String): Float{

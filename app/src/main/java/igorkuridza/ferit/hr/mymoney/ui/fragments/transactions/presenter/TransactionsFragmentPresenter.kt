@@ -1,11 +1,13 @@
 package igorkuridza.ferit.hr.mymoney.ui.fragments.transactions.presenter
 
+import igorkuridza.ferit.hr.mymoney.model.Transaction
+
 
 interface TransactionsFragmentPresenter {
 
         fun onViewCreated()
 
-        fun getTransactionAdapterData(type: String)
+        fun getTransactionAdapterData(dateType: String)
 
-        fun getTransactionByNote(note: String)
+        fun filterDataByNote(dateType: String, searchText: String?)
 }
