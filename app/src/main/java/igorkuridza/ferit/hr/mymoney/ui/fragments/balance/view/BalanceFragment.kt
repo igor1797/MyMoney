@@ -5,6 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import igorkuridza.ferit.hr.mymoney.R
 import igorkuridza.ferit.hr.mymoney.common.getCurrentYear
+import igorkuridza.ferit.hr.mymoney.common.setDivider
 import igorkuridza.ferit.hr.mymoney.ui.recyclerview.adapter.RecyclerAdapter
 import igorkuridza.ferit.hr.mymoney.ui.base.BaseFragment
 import igorkuridza.ferit.hr.mymoney.ui.fragments.balance.presenter.BalanceFragmentPresenter

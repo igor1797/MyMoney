@@ -2,6 +2,7 @@ package igorkuridza.ferit.hr.mymoney.ui.recyclerview.holders
 
 import android.view.View
 import igorkuridza.ferit.hr.mymoney.R
+import igorkuridza.ferit.hr.mymoney.common.getAmountString
 import igorkuridza.ferit.hr.mymoney.common.joinStrings
 import igorkuridza.ferit.hr.mymoney.common.setTextViewTextColor
 import igorkuridza.ferit.hr.mymoney.model.recyclerview.MonthYearBalance
@@ -15,17 +16,11 @@ class MonthYearBalanceHolder(view: View): BaseViewHolder<MonthYearBalance>(view)
         tvYear.text = item.year.toString()
 
         val expensesTotalAmount = item.expensesTotalAmount
-        tvExpensesTotalAmount.text = joinStrings(expensesTotalAmount.toString()," kn")
-        when(expensesTotalAmount){
-            0F -> tvExpensesTotalAmount.setTextViewTextColor(R.color.colorWhite)
-            else -> tvExpensesTotalAmount.setTextViewTextColor(R.color.red)
-        }
+        tvExpensesTotalAmount.text = joinStrings("$expensesTotalAmount","kn")
+        tvExpensesTotalAmount.setTextViewTextColor(R.color.red)
 
         val incomesTotalAmount = item.incomesTotalAmount
-        tvIncomesTotalAmount.text = joinStrings(incomesTotalAmount.toString()," kn")
-        when(incomesTotalAmount){
-            0F -> tvIncomesTotalAmount.setTextViewTextColor(R.color.colorWhite)
-            else -> tvIncomesTotalAmount.setTextViewTextColor(R.color.lightGreen)
-        }
+        tvIncomesTotalAmount.text = getAmountString(incomesTotalAmount)
+        tvIncomesTotalAmount.setTextViewTextColor(R.color.green)
     }
 }

@@ -5,8 +5,7 @@ import igorkuridza.ferit.hr.mymoney.database.DaoProvider
 import igorkuridza.ferit.hr.mymoney.database.dao.TransactionDao
 import igorkuridza.ferit.hr.mymoney.model.Transaction
 
-class TransactionRoomRepository:
-    TransactionRepository {
+class TransactionRoomRepository: TransactionRepository {
 
     private var db: DaoProvider = DaoProvider.getInstance(MyMoneyApp.getAppContext())
 

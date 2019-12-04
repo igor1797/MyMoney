@@ -3,7 +3,9 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
@@ -22,7 +24,7 @@
             android:textColor="@color/colorBlack"
             android:maxLines="1"
             android:ellipsize="end"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginStart="10dp"
             app:layout_constraintStart_toEndOf="@id/ivCategoryColor"
@@ -36,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textColor="@color/colorBlackTrans"
             app:layout_constraintStart_toEndOf="@id/ivCategoryColor"
             app:layout_constraintTop_toBottomOf="@id/tvCategoryName"
