@@ -9,7 +9,7 @@ import igorkuridza.ferit.hr.mymoney.R
 
 fun FragmentActivity.showFragment(containerId: Int, fragment: Fragment, shouldAddToBackStack: Boolean = false, tag: String = ""){
     supportFragmentManager.beginTransaction().apply {
-        if(shouldAddToBackStack){
+        if (shouldAddToBackStack) {
             addToBackStack(tag)
         }
     }.replace(containerId, fragment).commitAllowingStateLoss()
